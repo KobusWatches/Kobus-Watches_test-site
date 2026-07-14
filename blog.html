@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journal — Kobus</title>
+<meta name="description" content="Updates on Kobus design decisions and sourcing, published when there's something to share.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kobus.css">
+</head>
+<body>
+
+<header class="site-header is-transparent" id="site-header" data-hero="true">
+  <div class="container header-bar">
+    <a href="index.html" aria-label="Kobus home">
+      <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link" aria-current="page">Journal</a>
+      <a href="signup.html" class="nav-link">Sign up</a>
+    </nav>
+    <button type="button" class="menu-toggle md:hidden" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu md:hidden" id="mobile-menu">
+    <nav class="container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link" aria-current="page">Journal</a>
+      <a href="signup.html" class="nav-link">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO — development sketches -->
+  <section class="hero-full hero-full--short">
+    <img src="brand_assets/Development.png" alt="Sketch sheet of Kobus watch case and dial concepts">
+    <div class="hero-content">
+      <p class="label load-fade">Journal</p>
+      <h1 class="hero-title load-fade load-fade-delay-1">Notes on development.</h1>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="section-centered container" style="padding-top:clamp(56px, 8vw, 110px)">
+    <p class="body-text reveal" style="max-width:44ch; margin-left:auto; margin-right:auto; color:var(--kobus-grey)">
+      Updates on design decisions and sourcing, published when there's something to share.
+    </p>
+  </section>
+
+  <!-- ENTRIES -->
+  <section class="container" style="padding-top:clamp(40px, 5vw, 70px); padding-bottom:clamp(56px, 8vw, 110px)">
+    <hr class="hairline">
+
+    <a href="journal-magritte.html" class="journal-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 border-b reveal" style="border-color:var(--kobus-line)">
+      <div class="md:col-span-4">
+        <div class="img-frame overflow-hidden journal-thumb">
+          <img src="brand_assets/BXL clouds.png" alt="Pale sky and clouds over Brussels">
+        </div>
+      </div>
+      <div class="md:col-span-8 flex flex-col justify-center">
+        <p class="caption">10 Jun 2026 · Design</p>
+        <h3 class="h3 mt-3 mb-3">René Magritte, and the sub-dial as a window</h3>
+        <p class="body-text" style="max-width:56ch">On the Belgian surrealist, and how a small circle on a dial can suggest more than it shows.</p>
+        <span class="link-line" style="margin-top:1.75rem">Read the article</span>
+      </div>
+    </a>
+
+    <a href="journal-manually-wound-movement.html" class="journal-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 border-b reveal" style="border-color:var(--kobus-line)">
+      <div class="md:col-span-4">
+        <div class="img-frame overflow-hidden journal-thumb">
+          <img src="brand_assets/processed/journal-thumb-movement.jpg" alt="Line drawing of an escapement — escape wheel, pallet fork and balance">
+        </div>
+      </div>
+      <div class="md:col-span-8 flex flex-col justify-center">
+        <p class="caption">24 Mar 2026 · Development</p>
+        <h3 class="h3 mt-3 mb-3">Why we chose a manually wound movement</h3>
+        <p class="body-text" style="max-width:56ch">No date, no automatic rotor — a small seconds sub-dial and a movement you wind by hand. Here is why performance took a back seat to how the watch feels to use.</p>
+        <span class="link-line" style="margin-top:1.75rem">Read the article</span>
+      </div>
+    </a>
+
+    <a href="journal-art-nouveau-paradox.html" class="journal-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 border-b reveal" style="border-color:var(--kobus-line)">
+      <div class="md:col-span-4">
+        <div class="img-frame overflow-hidden journal-thumb">
+          <img src="brand_assets/processed/facade-detail.jpg" alt="Curved Art Nouveau bay window with wrought-iron mullions and stained glass, Brussels">
+        </div>
+      </div>
+      <div class="md:col-span-8 flex flex-col justify-center">
+        <p class="caption">18 Jan 2026 · Design</p>
+        <h3 class="h3 mt-3 mb-3">Designing a watch in a language that predates the wristwatch</h3>
+        <p class="body-text" style="max-width:56ch">Art Nouveau had largely run its course in Brussels before the wristwatch became a commercial object. On designing within a style that never had one.</p>
+        <span class="link-line" style="margin-top:1.75rem">Read the article</span>
+      </div>
+    </a>
+
+    <a href="journal-design-approach.html" class="journal-row grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 md:py-12 reveal">
+      <div class="md:col-span-4">
+        <div class="img-frame overflow-hidden journal-thumb">
+          <img src="brand_assets/processed/tassel-stairway.jpg" alt="Wrought-iron and painted staircase of the Hôtel Tassel by Victor Horta, Brussels">
+        </div>
+      </div>
+      <div class="md:col-span-8 flex flex-col justify-center">
+        <p class="caption">14 Nov 2025 · Design</p>
+        <h3 class="h3 mt-3 mb-3">Why Art Nouveau, and not Art Deco</h3>
+        <p class="body-text" style="max-width:56ch">On the decisions Max and I made before a single line was drawn — and why we chose the harder reference.</p>
+        <span class="link-line" style="margin-top:1.75rem">Read the article</span>
+      </div>
+    </a>
+
+  </section>
+
+  <!-- QUIET CTA -->
+  <section class="card-stone">
+    <div class="section container section-centered">
+      <h2 class="h2 reveal">Released when ready.</h2>
+      <p class="body-text reveal" style="margin-top:1.5rem; max-width:40ch">
+        Be there when it lands! Sign up to get updates on development and the first release.
+      </p>
+      <div class="reveal" style="margin-top:2.5rem">
+        <a href="signup.html" class="btn btn-primary">Join the list</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container pt-16 md:pt-20 pb-10">
+    <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    <p class="caption mb-10">Brussels, Belgium</p>
+    <nav class="mb-12">
+      <a href="index.html" class="caption">Home</a>
+      <a href="about.html" class="caption">About</a>
+      <a href="blog.html" class="caption">Journal</a>
+      <a href="signup.html" class="caption">Sign up</a>
+    </nav>
+    <hr class="hairline mb-6">
+    <p class="caption">© 2026 Kobus.</p>
+  </div>
+</footer>
+
+<script src="kobus.js"></script>
+
+</body>
+</html>

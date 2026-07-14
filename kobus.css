@@ -1,0 +1,411 @@
+/* Kobus — shared design tokens & components
+   v2 — cinematic scroll-storytelling structure (full-bleed photography chapters,
+   centered statements, fixed header). Palette and type unchanged. */
+
+:root{
+  --kobus-white: #FCFBF8;
+  --kobus-ink: #141414;
+  --kobus-navy: #1C3450;
+  --kobus-stone: #EAE6DF;
+  --kobus-grey: #6B6B66;
+  --kobus-line: #DDD8D0;
+  --ease-spring: cubic-bezier(.16, 1.08, .38, .98);
+  --header-h: 84px;
+  --section-v: clamp(90px, 12vw, 170px);
+}
+@media (min-width: 768px){
+  :root{ --header-h: 104px; }
+}
+
+*{ box-sizing: border-box; }
+html{
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+body{
+  background: var(--kobus-white);
+  color: var(--kobus-ink);
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+  font-variant-numeric: tabular-nums;
+  margin: 0;
+}
+
+/* Thin scrollbar, ink thumb */
+::-webkit-scrollbar{ width: 4px; }
+::-webkit-scrollbar-track{ background: var(--kobus-white); }
+::-webkit-scrollbar-thumb{ background: var(--kobus-ink); }
+
+img{ max-width: 100%; display: block; }
+
+/* Typography scale — Fraunces (display) / Inter (body+UI) */
+.font-display{
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  letter-spacing: -0.01em;
+}
+
+.h1, .h2, .h3, .h4{ font-family: 'Fraunces', Georgia, serif; font-variation-settings: "SOFT" 50, "WONK" 0; color: var(--kobus-ink); letter-spacing: -0.01em; margin: 0; }
+.h1{ font-weight: 350; font-size: clamp(2.5rem, 1.9rem + 2.6vw, 3.75rem); line-height: 1.12; }
+.h2{ font-weight: 350; font-size: clamp(1.9rem, 1.5rem + 1.6vw, 2.75rem); line-height: 1.2; }
+.h3{ font-weight: 400; font-size: clamp(1.45rem, 1.25rem + 0.8vw, 2rem); line-height: 1.28; }
+.h4{ font-weight: 500; font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.5625rem); line-height: 1.28; }
+
+.body-text{ font-family: 'Inter', sans-serif; font-weight: 400; font-size: clamp(1rem, 0.96rem + 0.2vw, 1.0625rem); line-height: 1.7; color: var(--kobus-ink); max-width: 68ch; margin: 0; }
+.caption{ font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.875rem; line-height: 1.57; color: var(--kobus-grey); margin: 0; }
+.label{ font-family: 'Inter', sans-serif; font-weight: 500; font-size: 0.75rem; line-height: 1.33; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kobus-grey); margin: 0; }
+
+/* Large centered statement — the site's speaking voice */
+.quote{
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  font-weight: 350;
+  font-style: italic;
+  font-size: clamp(1.5rem, 1.15rem + 1.6vw, 2.375rem);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--kobus-ink);
+  max-width: 24em;
+  margin: 0 auto;
+}
+
+/* Layout */
+.container{ max-width: 1200px; margin: 0 auto; padding-left: clamp(24px, 6vw, 80px); padding-right: clamp(24px, 6vw, 80px); }
+.section{ padding-top: var(--section-v); padding-bottom: var(--section-v); }
+.section-centered{ text-align: center; }
+.section-centered .body-text{ margin-left: auto; margin-right: auto; }
+
+.hairline{ border: none; border-top: 1px solid var(--kobus-line); margin: 0; }
+
+/* Buttons */
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  padding: 14px 28px;
+  border-radius: 2px;
+  transition: background-color 320ms ease, color 320ms ease, border-color 320ms ease, transform 320ms cubic-bezier(.16,1,.3,1);
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn-primary{ background: var(--kobus-navy); color: var(--kobus-white); border: 1px solid var(--kobus-navy); }
+.btn-primary:hover{ background: #142640; border-color: #142640; transform: translateY(-2px); }
+.btn-primary:active{ transform: translateY(0); }
+.btn-ghost{ background: transparent; color: var(--kobus-ink); border: 1px solid var(--kobus-ink); }
+.btn-ghost:hover{ background: var(--kobus-ink); color: var(--kobus-white); }
+.btn:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 3px; }
+
+/* Hairline-flanked link — the "Discover" treatment */
+.link-line{
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kobus-ink);
+  text-decoration: none;
+  cursor: pointer;
+}
+.link-line::before, .link-line::after{
+  content: '';
+  display: block;
+  width: 44px;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.65;
+  transition: transform 400ms var(--ease-spring);
+}
+.link-line:hover::before, .link-line:hover::after{ transform: scaleX(1.5); }
+.link-line:hover::before{ transform-origin: right; }
+.link-line:hover::after{ transform-origin: left; }
+.link-line:active{ opacity: 0.75; }
+.link-line:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 6px; }
+.link-line--light{ color: var(--kobus-white); }
+.link-line--light:focus-visible{ outline-color: var(--kobus-white); }
+
+/* Header — fixed, transparent over hero, solid after scroll */
+.site-header{
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 40;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background-color 400ms ease, border-color 400ms ease;
+}
+.site-header .header-bar{ height: var(--header-h); display: flex; align-items: center; justify-content: space-between; }
+.site-header .wordmark{ height: 30px; width: auto; }
+@media (min-width: 768px){ .site-header .wordmark{ height: 38px; } }
+
+.nav-link{ font-family:'Inter', sans-serif; font-weight: 400; font-size: 0.9375rem; color: var(--kobus-ink); text-decoration: none; position: relative; padding-bottom: 2px; transition: color 400ms ease; }
+.nav-link::after{ content:''; position:absolute; left:0; right:0; bottom:-3px; height:1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 350ms cubic-bezier(.16,1,.3,1); }
+.nav-link:hover::after, .nav-link[aria-current="page"]::after{ transform: scaleX(1); transform-origin: left; }
+.nav-link:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 4px; }
+
+/* Over the hero image: white wordmark and links (wordmark src is swapped in kobus.js) */
+.site-header.is-transparent .nav-link{ color: var(--kobus-white); }
+.site-header.is-transparent .nav-link:focus-visible{ outline-color: var(--kobus-white); }
+.site-header.is-transparent .menu-toggle span{ background: var(--kobus-white); }
+
+/* Solid state */
+.site-header.is-solid{ background: var(--kobus-white); border-bottom-color: var(--kobus-line); }
+.site-header.is-solid .nav-link{ color: var(--kobus-ink); }
+.site-header.is-solid .menu-toggle span{ background: var(--kobus-ink); }
+
+/* Pages without a hero keep content clear of the fixed header */
+.page-offset{ padding-top: var(--header-h); }
+
+/* Mobile menu */
+.menu-toggle{ display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 24px; height: 24px; background: none; border: none; padding: 0; cursor: pointer; }
+.menu-toggle span{ display: block; width: 100%; height: 1px; background: var(--kobus-ink); transition: transform 300ms ease, opacity 300ms ease, background-color 400ms ease; }
+.menu-toggle[aria-expanded="true"] span:first-child{ transform: translateY(3px) rotate(45deg); }
+.menu-toggle[aria-expanded="true"] span:last-child{ transform: translateY(-3px) rotate(-45deg); }
+.menu-toggle:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 4px; }
+
+.mobile-menu{ max-height: 0; overflow: hidden; transition: max-height 350ms cubic-bezier(.16,1,.3,1); background: var(--kobus-white); border-top: 1px solid transparent; }
+.mobile-menu.is-open{ max-height: 320px; border-top-color: var(--kobus-line); }
+.mobile-menu nav{ display: flex; flex-direction: column; }
+.mobile-menu .nav-link{ padding: 16px 0; color: var(--kobus-ink); }
+.mobile-menu .nav-link::after{ display: none; }
+/* When the menu is open the header must read as solid regardless of scroll */
+.site-header.menu-open{ background: var(--kobus-white); border-bottom-color: var(--kobus-line); }
+.site-header.menu-open .menu-toggle span{ background: var(--kobus-ink); }
+
+/* Full-viewport photographic hero */
+.hero-full{
+  position: relative;
+  height: 100svh;
+  min-height: 560px;
+  overflow: hidden;
+}
+.hero-full img{
+  width: 100%; height: 100%;
+  object-fit: cover;
+  animation: hero-settle 3200ms var(--ease-spring) both;
+}
+/* One orchestrated load moment: the image settles as the text fades in */
+@keyframes hero-settle{
+  from{ transform: scale(1.06); }
+  to{ transform: scale(1); }
+}
+/* Minimal scrim for legibility only — brand rule: honest images, no duotones */
+.hero-full::after{
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.62) 0%, rgba(10,10,10,0.18) 34%, rgba(10,10,10,0) 55%, rgba(10,10,10,0.38) 100%);
+  pointer-events: none;
+}
+.hero-content{
+  position: absolute;
+  left: 0; right: 0;
+  bottom: clamp(56px, 10vh, 120px);
+  z-index: 1;
+  text-align: center;
+  padding: 0 clamp(24px, 6vw, 80px);
+  will-change: transform, opacity;
+}
+.hero-content .label{ color: rgba(252,251,248,0.85); }
+.hero-content .hero-title{
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "SOFT" 50, "WONK" 0;
+  font-weight: 350;
+  font-size: clamp(2.4rem, 1.8rem + 3vw, 4.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--kobus-white);
+  max-width: 15em;
+  margin: 18px auto 0;
+}
+.hero-content .link-line{ margin-top: clamp(28px, 4vh, 44px); }
+
+/* Hero text raised to sit on the photograph's optical centre. Flexbox rather
+   than a translate does the centring, because the scroll parallax writes an
+   inline transform on this element and would override it. The padding-bottom
+   lifts the block above true centre. The centre of the image is its brightest
+   zone, so a soft radial veil (anchored where the text sits) adds contrast. */
+.hero-content--center{
+  top: 0; bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: clamp(72px, 14vh, 160px);
+}
+.hero-content--center::before{
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse 58% 34% at 50% 43%, rgba(10,10,10,0.48), rgba(10,10,10,0) 74%);
+  pointer-events: none;
+}
+
+/* Shorter hero for inner pages */
+.hero-full--short{ height: 72svh; min-height: 480px; }
+
+/* Hero that favours the top of the photograph when the crop trims it */
+.hero-full--top img{ object-position: center 30%; }
+
+/* Full-bleed photography chapter */
+.band{
+  position: relative;
+  overflow: hidden;
+}
+/* Slight over-scale gives the parallax drift headroom without exposing edges */
+.band img{ width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transform: scale(1.14); will-change: transform; }
+.band--tall{ height: clamp(420px, 82vh, 780px); }
+.band--short{ height: clamp(300px, 55vh, 560px); }
+.band-content{
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 clamp(24px, 6vw, 80px);
+}
+.band--overlay::after{
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(10,10,10,0.38);
+  pointer-events: none;
+}
+.band--overlay .band-content{ z-index: 1; position: absolute; inset: 0; }
+.band--overlay .quote{ color: var(--kobus-white); }
+.band--overlay .label{ color: rgba(252,251,248,0.85); }
+
+/* Stone surface */
+.card-stone{ background: var(--kobus-stone); }
+
+/* Footer — centered, ceremonial */
+.site-footer{ background: var(--kobus-stone); text-align: center; }
+.site-footer .wordmark{ height: 26px; width: auto; margin: 0 auto 10px; }
+.site-footer nav{ display: flex; justify-content: center; gap: clamp(20px, 4vw, 40px); flex-wrap: wrap; }
+.site-footer a{ color: var(--kobus-ink); text-decoration: none; }
+.site-footer a:hover{ color: var(--kobus-navy); }
+.site-footer a:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 3px; }
+.site-footer .hairline{ border-top-color: rgba(20,20,20,0.14); }
+
+/* Image frame (kept for editorial grids) — honest, no gradients/duotones per brand rule */
+.img-frame{ background: var(--kobus-stone); }
+.img-frame.overflow-hidden img{ transition: transform 700ms var(--ease-spring); }
+.img-frame.overflow-hidden:hover img{ transform: scale(1.035); }
+
+/* Team cards — clickable portraits that open a bio panel.
+   Buttons vertically center their content by default, which misaligns
+   the circles once the grid stretches shorter cards to match the tallest;
+   flex + flex-start keeps every avatar pinned to the top. */
+.team-card{ display: flex; flex-direction: column; align-items: center; justify-content: flex-start; height: 100%; background: none; border: none; padding: 0; margin: 0; font: inherit; color: inherit; text-align: center; cursor: pointer; }
+.team-avatar{ transition: transform 400ms var(--ease-spring), box-shadow 400ms var(--ease-spring); }
+.team-card:hover .team-avatar{ transform: scale(1.035); box-shadow: 0 16px 32px -12px rgba(10,10,10,0.28); }
+.team-card:active .team-avatar{ transform: scale(1.01); }
+.team-card:focus-visible{ outline: none; }
+.team-card:focus-visible .team-avatar{ outline: 2px solid var(--kobus-navy); outline-offset: 4px; }
+
+.team-modal{
+  position: fixed; inset: 0; z-index: 60;
+  display: flex; align-items: center; justify-content: center;
+  padding: 24px;
+  opacity: 0; visibility: hidden;
+  transition: opacity 300ms ease, visibility 0s linear 300ms;
+}
+.team-modal.is-open{ opacity: 1; visibility: visible; transition: opacity 300ms ease; }
+.team-modal-backdrop{ position: absolute; inset: 0; background: rgba(10,10,10,0.45); }
+.team-modal-panel{
+  position: relative;
+  background: var(--kobus-white);
+  width: 100%; max-width: 440px;
+  padding: clamp(32px, 5vw, 48px);
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 30px 70px -16px rgba(10,10,10,0.4), 0 10px 28px -10px rgba(10,10,10,0.22);
+  transform: translateY(16px) scale(0.97);
+  opacity: 0;
+  transition: transform 380ms var(--ease-spring), opacity 300ms ease;
+}
+.team-modal.is-open .team-modal-panel{ transform: translateY(0) scale(1); opacity: 1; }
+.team-modal-close{
+  position: absolute; top: 14px; right: 14px;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  background: none; border: none; border-radius: 50%;
+  font-size: 1.5rem; line-height: 1; color: var(--kobus-grey); cursor: pointer;
+  transition: background 250ms ease, color 250ms ease;
+}
+.team-modal-close:hover{ color: var(--kobus-ink); background: var(--kobus-stone); }
+.team-modal-close:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 2px; }
+.team-modal-avatar{
+  width: 120px; height: 120px; margin: 0 auto 20px;
+  border-radius: 50%; overflow: hidden; background: var(--kobus-stone);
+  display: flex; align-items: center; justify-content: center;
+}
+.team-modal-avatar img{ width: 100%; height: 100%; object-fit: cover; }
+.team-modal-avatar .h3{ color: var(--kobus-grey); }
+
+/* Journal index — each row is one link to its article */
+a.journal-row{ color: inherit; text-decoration: none; }
+a.journal-row .h3{ transition: opacity 300ms ease; }
+a.journal-row:hover .h3{ opacity: 0.68; }
+a.journal-row:hover .img-frame img{ transform: scale(1.035); }
+a.journal-row:active .img-frame img{ transform: scale(1.015); }
+a.journal-row:hover .link-line::before, a.journal-row:hover .link-line::after{ transform: scaleX(1.5); }
+a.journal-row:focus-visible{ outline: 2px solid var(--kobus-ink); outline-offset: 6px; }
+.journal-thumb{ aspect-ratio: 4 / 3; }
+.journal-thumb img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Article pages */
+.article-body{ max-width: 36rem; margin: 0 auto; }
+.article-body p + p{ margin-top: 1.25rem; }
+
+/* Page-load fade — a single orchestrated moment */
+@keyframes load-fade-up{
+  from{ opacity: 0; transform: translateY(10px); }
+  to{ opacity: 1; transform: translateY(0); }
+}
+.load-fade{ animation: load-fade-up 700ms var(--ease-spring) both; }
+.load-fade-delay-1{ animation-delay: 120ms; }
+.load-fade-delay-2{ animation-delay: 240ms; }
+
+/* Scroll-triggered reveal (IntersectionObserver adds .is-visible) */
+.reveal{
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 800ms var(--ease-spring), transform 800ms var(--ease-spring);
+}
+.reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
+  html{ scroll-behavior: auto; }
+  .reveal{ opacity: 1; transform: none; }
+}
+
+/* Line icon strokes */
+.line-icon{ stroke: var(--kobus-ink); stroke-width: 1.5; fill: none; }
+
+/* Form */
+.field label{ font-family:'Inter',sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--kobus-grey); display:block; margin-bottom: 8px; }
+.field input{
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: var(--kobus-ink);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--kobus-line);
+  padding: 10px 2px;
+  transition: border-color 250ms ease;
+}
+.field input:focus{ outline: none; border-bottom: 1px solid var(--kobus-navy); }
+.field input:focus-visible{ outline: none; }

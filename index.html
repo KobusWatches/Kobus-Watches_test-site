@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kobus — A watch built to be looked at closely</title>
+<meta name="description" content="Kobus is a new watch brand based in Brussels, shaped by Art Nouveau architecture rather than by other watches.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kobus.css">
+</head>
+<body>
+
+<header class="site-header is-transparent" id="site-header" data-hero="true">
+  <div class="container header-bar">
+    <a href="index.html" aria-label="Kobus home">
+      <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link" aria-current="page">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Journal</a>
+      <a href="signup.html" class="nav-link">Sign up</a>
+    </nav>
+    <button type="button" class="menu-toggle md:hidden" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu md:hidden" id="mobile-menu">
+    <nav class="container">
+      <a href="index.html" class="nav-link" aria-current="page">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Journal</a>
+      <a href="signup.html" class="nav-link">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO — chapter one: the world the watch comes from -->
+  <section class="hero-full">
+    <img src="brand_assets/processed/tassel-staircase-hall.jpg" alt="Painted vines and winding staircase of the Hôtel Tassel by Victor Horta, Brussels">
+    <div class="hero-content hero-content--center">
+      <p class="label load-fade">Kobus Watches — Brussels, Belgium</p>
+      <h1 class="hero-title load-fade load-fade-delay-1">Every curve curated. Every detail intentional.<br>Elegance, by design.</h1>
+      <a href="#intro" class="link-line link-line--light load-fade load-fade-delay-2">Discover</a>
+    </div>
+  </section>
+
+  <!-- INTRO STATEMENT -->
+  <section class="section section-centered container" id="intro">
+    <p class="quote reveal">Kobus is a new watch brand — born in Brussels. Our goal is to elevate everyday life through quiet elegance.</p>
+    <p class="caption reveal" style="margin-top:2.5rem">Our first model will be a dress watch, inspired by the city's architecture and heritage.</p>
+  </section>
+
+  <!-- CHAPTER — the facade -->
+  <div class="band band--tall reveal">
+    <img src="brand_assets/processed/hero-van-eetvelde.jpg" alt="Facade of the Hôtel van Eetvelde by Victor Horta, Brussels">
+  </div>
+
+  <!-- APPROACH -->
+  <section class="section section-centered container">
+    <p class="label reveal">Our philosophy</p>
+    <h2 class="h2 reveal" style="margin-top:1.25rem">Form first, then function.</h2>
+    <p class="body-text reveal" style="margin-top:2rem; max-width:44ch">
+      At Kobus we design watches with beauty and elegance as their primary function. Every curve, every angle is designed with intent.
+    </p>
+    <p class="body-text reveal" style="margin-top:1.25rem; max-width:44ch">
+      It’s for the person who catches the small things: proportion, balance, a curve that feels inevitable, a surprise detail that isn’t there to impress — it’s there because it belongs. The kind of design you don’t move on from. You keep noticing it. You keep finding your way back to it.
+    </p>
+    <p class="body-text reveal" style="margin-top:1.25rem; max-width:44ch">
+      As a new entrant, the brand takes inspiration from what has come before, but never seeks to replicate it.
+    </p>
+  </section>
+
+  <!-- DETAIL -->
+  <section class="card-stone">
+    <div class="section container section-centered">
+      <p class="label reveal">Details</p>
+      <h2 class="h2 reveal" style="margin-top:1.25rem">So far.</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-10 mt-16 md:mt-20 text-center">
+
+        <div class="reveal">
+          <img src="brand_assets/processed/icon-case.png" alt="" aria-hidden="true" class="mb-6 mx-auto" style="height:44px; width:auto">
+          <h4 class="h4 mb-3">Case</h4>
+          <p class="caption" style="max-width:30ch; margin:0 auto">By using organic curves and a slender, oval case, the watch maintains elegant proportions.</p>
+        </div>
+
+        <div class="reveal">
+          <img src="brand_assets/processed/icon-movement.png" alt="" aria-hidden="true" class="mb-6 mx-auto" style="height:44px; width:auto">
+          <h4 class="h4 mb-3">Movement</h4>
+          <p class="caption" style="max-width:30ch; margin:0 auto">Manually wound with small seconds, meant to be interacted with. No date, no rotor — nothing to distract from the design.</p>
+        </div>
+
+        <div class="reveal">
+          <img src="brand_assets/processed/icon-finish.png" alt="" aria-hidden="true" class="mb-6 mx-auto" style="height:44px; width:auto">
+          <h4 class="h4 mb-3">Finish</h4>
+          <p class="caption" style="max-width:30ch; margin:0 auto">Stainless steel. Highly polished surfaces layered with sharp, brushed edges to underscore curves and maintain depth.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CHAPTER — why Brussels -->
+  <div class="band band--tall band--overlay">
+    <img src="brand_assets/BXL clouds.png" alt="Clouds over the Brussels skyline" data-parallax-scale="1.06" style="transform:scale(1.06)">
+    <div class="band-content">
+      <p class="label reveal">Brussels</p>
+      <p class="quote reveal" style="margin-top:1.5rem">The city is the blueprint.</p>
+    </div>
+  </div>
+
+  <!-- WHY BRUSSELS — body -->
+  <section class="section section-centered container">
+    <p class="body-text reveal" style="max-width:48ch">
+      The brand draws deeply from the cultural heritage of Brussels, building a unique visual identity.
+    </p>
+    <p class="body-text reveal" style="margin-top:1.25rem; max-width:48ch">
+      These influences are translated into forms, colours, and details rarely seen in the watch industry, setting Kobus apart from more conventional design-led brands.
+    </p>
+    <a href="about.html" class="link-line reveal" style="margin-top:3rem">Our story</a>
+  </section>
+
+  <!-- QUIET CTA -->
+  <section class="card-stone">
+    <div class="section container section-centered">
+      <h2 class="h2 reveal">Released when ready.</h2>
+      <p class="body-text reveal" style="margin-top:1.5rem; max-width:40ch">
+        Be there when it lands! Sign up to get updates on development and the first release.
+      </p>
+      <div class="reveal" style="margin-top:2.5rem">
+        <a href="signup.html" class="btn btn-primary">Join the list</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container pt-16 md:pt-20 pb-10">
+    <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    <p class="caption mb-10">Brussels, Belgium</p>
+    <nav class="mb-12">
+      <a href="index.html" class="caption">Home</a>
+      <a href="about.html" class="caption">About</a>
+      <a href="blog.html" class="caption">Journal</a>
+      <a href="signup.html" class="caption">Sign up</a>
+    </nav>
+    <hr class="hairline mb-6">
+    <p class="caption">© 2026 Kobus.</p>
+  </div>
+</footer>
+
+<script src="kobus.js"></script>
+
+</body>
+</html>

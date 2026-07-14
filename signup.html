@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign up — Kobus</title>
+<meta name="description" content="Released when ready. Sign up for Kobus development notes and first access to the launch.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..500&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="kobus.css">
+</head>
+<body>
+
+<header class="site-header is-solid" id="site-header" data-hero="false">
+  <div class="container header-bar">
+    <a href="index.html" aria-label="Kobus home">
+      <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    </a>
+    <nav class="hidden md:flex items-center gap-10">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Journal</a>
+      <a href="signup.html" class="nav-link" aria-current="page">Sign up</a>
+    </nav>
+    <button type="button" class="menu-toggle md:hidden" id="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu md:hidden" id="mobile-menu">
+    <nav class="container">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="blog.html" class="nav-link">Journal</a>
+      <a href="signup.html" class="nav-link" aria-current="page">Sign up</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-offset">
+  <section class="grid grid-cols-1 md:grid-cols-2" style="min-height:calc(100svh - var(--header-h))">
+
+    <!-- Photo panel -->
+    <div class="hidden md:block relative overflow-hidden">
+      <img src="brand_assets/processed/ironwork-detail.jpg" alt="Wrought-iron Art Nouveau detail, Brussels" class="absolute inset-0 w-full h-full object-cover">
+    </div>
+
+    <!-- Form panel -->
+    <div class="flex items-center">
+      <div class="w-full" style="padding:clamp(48px, 8vw, 110px) clamp(24px, 6vw, 90px)">
+        <div class="load-fade">
+          <p class="label mb-4">Sign up</p>
+          <h1 class="h1 mb-6">Released when ready.</h1>
+          <p class="body-text" style="color:var(--kobus-grey); max-width:44ch">
+            Sign up to get updates on development and design decisions, and access when the collection launches. No countdowns.
+          </p>
+        </div>
+
+        <form id="signup-form" class="max-w-md mt-12 load-fade load-fade-delay-1" novalidate>
+          <div class="field mb-8">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" autocomplete="name">
+          </div>
+          <div class="field mb-10">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-full sm:w-auto">Sign up</button>
+          <p class="caption mt-6">Unsubscribe anytime. We will only write when we have something to say.</p>
+        </form>
+
+        <div id="signup-confirmation" class="max-w-md mt-12 hidden">
+          <h3 class="h3 mb-4">You are on the list.</h3>
+          <p class="body-text">Thank you. We will be in touch when there's an update.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container pt-16 md:pt-20 pb-10">
+    <img src="brand_assets/processed/kobus-wordmark-black-alpha.png" alt="Kobus" class="wordmark">
+    <p class="caption mb-10">Brussels, Belgium</p>
+    <nav class="mb-12">
+      <a href="index.html" class="caption">Home</a>
+      <a href="about.html" class="caption">About</a>
+      <a href="blog.html" class="caption">Journal</a>
+      <a href="signup.html" class="caption">Sign up</a>
+    </nav>
+    <hr class="hairline mb-6">
+    <p class="caption">© 2026 Kobus.</p>
+  </div>
+</footer>
+
+<script src="kobus.js"></script>
+<script>
+  const form = document.getElementById('signup-form');
+  const confirmation = document.getElementById('signup-confirmation');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    form.classList.add('hidden');
+    confirmation.classList.remove('hidden');
+  });
+</script>
+
+</body>
+</html>
