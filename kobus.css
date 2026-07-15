@@ -285,6 +285,11 @@ img{ max-width: 100%; display: block; }
 /* Shorter hero for inner pages */
 .hero-full--short{ height: 72svh; min-height: 480px; }
 
+/* Letterboxed hero: show the full image, never crop — the fill colour matches
+   the artwork's own background so the bars read as part of the image */
+.hero-full--contain{ background: #212121; }
+.hero-full--contain img{ object-fit: contain; }
+
 /* Hero that favours the top of the photograph when the crop trims it */
 .hero-full--top img{ object-position: center 30%; }
 
