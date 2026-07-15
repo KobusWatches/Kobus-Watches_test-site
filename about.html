@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>About — Kobus</title>
 <meta name="description" content="A new workshop in Brussels. Kobus makes design-led watches, shaped by Art Nouveau architecture.">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -42,7 +42,7 @@
 
   <!-- HERO — the staircase -->
   <section class="hero-full hero-full--top">
-    <img src="brand_assets/processed/solvay-interior.jpg" alt="Stained-glass skylight and staircase landing of the Hôtel Solvay by Victor Horta, Brussels">
+    <img src="brand_assets/processed/solvay-interior.jpg" alt="Stained-glass skylight and staircase landing of the Hôtel Solvay by Victor Horta, Brussels" fetchpriority="high">
     <div class="hero-content hero-content--center">
       <h1 class="hero-title load-fade">About us</h1>
       <a href="#story" class="link-line link-line--light load-fade load-fade-delay-1">Our story</a>
@@ -66,7 +66,7 @@
       <div class="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
         <div class="md:col-span-5 reveal">
           <div class="img-frame overflow-hidden">
-            <img src="brand_assets/processed/opa-kobus-portrait-bw.jpg" alt="Kobus with his grandfather Sjaak, the watch's namesake" class="w-full h-auto object-cover">
+            <img src="brand_assets/processed/opa-kobus-portrait-bw.jpg" alt="Kobus with his grandfather Sjaak, the watch's namesake" class="w-full h-auto object-cover" loading="lazy" decoding="async">
           </div>
         </div>
         <div class="md:col-span-6 md:col-start-7 reveal">
@@ -110,7 +110,7 @@
 
   <!-- CHAPTER — early sketches -->
   <div class="band band--short reveal" style="background:var(--kobus-stone)">
-    <img src="brand_assets/Sketches_Max.png" alt="Early concept sketches of the Kobus watch case, exploring proportion and dial layout" style="filter:sepia(0.14) saturate(1.05) contrast(1.04) brightness(0.98)">
+    <img src="brand_assets/Sketches_Max.png" alt="Early concept sketches of the Kobus watch case, exploring proportion and dial layout" style="filter:sepia(0.14) saturate(1.05) contrast(1.04) brightness(0.98)" loading="lazy" decoding="async">
   </div>
 
   <!-- TEAM -->
@@ -119,28 +119,28 @@
     <h2 class="h2 reveal" style="margin-top:1.25rem">The people behind Kobus.</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-x-8 gap-y-14 mt-16 md:mt-20 text-center" style="max-width:760px; margin-left:auto; margin-right:auto">
       <button type="button" class="team-card reveal" data-name="Mathieu Vuylsteke" data-role="Founder" data-bio="An economist by training, Mathieu has built his career in European affairs — from negotiation to policy advice and research. But his passion for watches predates all of that. Starting Kobus is where that lifelong interest finally meets the drive to build something of his own.">
-        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full" style="width:160px; height:160px; background:var(--kobus-stone)">
-          <img src="brand_assets/Website foto Mathieu.JPG" alt="Mathieu Vuylsteke, Founder of Kobus" class="w-full h-full object-cover" style="filter:grayscale(1) contrast(1.05); object-position:center 30%">
+        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full" style="width:min(160px, 100%); aspect-ratio:1/1; background:var(--kobus-stone)">
+          <img src="brand_assets/Website foto Mathieu.JPG" alt="Mathieu Vuylsteke, Founder of Kobus" class="w-full h-full object-cover" style="filter:grayscale(1) contrast(1.05); object-position:center 30%" loading="lazy" decoding="async">
         </div>
         <h4 class="h4 mb-1">Mathieu Vuylsteke</h4>
         <p class="caption">Founder</p>
       </button>
       <button type="button" class="team-card reveal" data-name="Max Resnick" data-role="Watch Designer" data-url="https://maxresnick.design/" data-bio="Max is a British, award-winning designer and one of the watch industry's rising stars. He has worked across the spectrum — from established maisons to high-end independents and startup microbrands. His role at Kobus goes beyond the drawing board: from production to commercialisation to building the right network, Max brings the full picture into focus.">
-        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full" style="width:160px; height:160px; background:var(--kobus-stone)">
-          <img src="brand_assets/Max Resnick_headshot.webp" alt="Max Resnick, Watch Designer at Kobus" class="w-full h-full object-cover" style="object-position:center 25%">
+        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full" style="width:min(160px, 100%); aspect-ratio:1/1; background:var(--kobus-stone)">
+          <img src="brand_assets/Max Resnick_headshot.webp" alt="Max Resnick, Watch Designer at Kobus" class="w-full h-full object-cover" style="object-position:center 25%" loading="lazy" decoding="async">
         </div>
         <h4 class="h4 mb-1">Max Resnick</h4>
         <p class="caption">Watch Designer</p>
       </button>
       <button type="button" class="team-card reveal" data-name="Björn Altmann" data-role="Branding &amp; dial/typography design" data-url="https://www.bjoernaltmann.com/" data-bio="Björn is a graphic designer, illustrator, and typographer based in London. Branding and typography are his focus, though it was his watch illustrations that first earned him recognition within the watch community. He has worked at McCann and with brands including TAG Heuer and Tiffany &amp; Co., and in recent years has taken on watch and dial design directly for several brands — expertise he now brings to Kobus.">
-        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full flex items-center justify-center" style="width:160px; height:160px; background:var(--kobus-stone)">
-          <img src="brand_assets/Logo_B_Altmann.webp" alt="Björn Altmann logo mark" class="object-contain" style="width:62%; height:62%">
+        <div class="team-avatar mx-auto mb-6 overflow-hidden rounded-full flex items-center justify-center" style="width:min(160px, 100%); aspect-ratio:1/1; background:var(--kobus-stone)">
+          <img src="brand_assets/Logo_B_Altmann.webp" alt="Björn Altmann logo mark" class="object-contain" style="width:62%; height:62%" loading="lazy" decoding="async">
         </div>
         <h4 class="h4 mb-1">Björn Altmann</h4>
         <p class="caption">Branding &amp; dial/typography design</p>
       </button>
       <button type="button" class="team-card reveal" data-name="Créstin van Heerden" data-role="Strategy" data-url="https://crestin.myportfolio.com/about" data-bio="Créstin makes sure Kobus is more than a one-trick pony. Working closely with Björn, he shaped the brand strategy that keeps Kobus oriented toward the future — and keeps everything, visual and strategic, pointed in the same direction.">
-        <div class="team-avatar mx-auto mb-6 rounded-full flex items-center justify-center" style="width:160px; height:160px; background:var(--kobus-stone)">
+        <div class="team-avatar mx-auto mb-6 rounded-full flex items-center justify-center" style="width:min(160px, 100%); aspect-ratio:1/1; background:var(--kobus-stone)">
           <span class="h3" style="color:var(--kobus-grey)">CvH</span>
         </div>
         <h4 class="h4 mb-1">Créstin van Heerden</h4>
