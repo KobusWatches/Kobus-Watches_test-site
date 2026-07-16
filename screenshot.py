@@ -59,6 +59,9 @@ def main():
                     return msg.get("result", {})
 
         send("Page.enable")
+        # The persistent profile caches CSS/JS across runs; always fetch fresh.
+        send("Network.enable")
+        send("Network.setCacheDisabled", {"cacheDisabled": True})
         send("Emulation.setDeviceMetricsOverride",
              {"width": width, "height": height, "deviceScaleFactor": 1, "mobile": width < 500})
         send("Page.navigate", {"url": url})
