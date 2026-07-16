@@ -340,6 +340,14 @@ img{ max-width: 100%; display: block; }
 .site-footer a:focus-visible{ outline: 2px solid var(--kobus-navy); outline-offset: 3px; }
 .site-footer .hairline{ border-top-color: rgba(20,20,20,0.14); }
 
+/* Footer social/contact icons — 44px touch targets around 20px glyphs */
+.social-links{ display: flex; justify-content: center; gap: 4px; }
+.site-footer .social-links a{ display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: var(--kobus-grey); transition: color 400ms ease, transform 400ms var(--ease-spring); }
+@media (hover: hover){
+  .site-footer .social-links a:hover{ color: var(--kobus-navy); transform: translateY(-2px); }
+}
+.site-footer .social-links a:active{ transform: translateY(0) scale(0.96); }
+
 /* Image frame (kept for editorial grids) — honest, no gradients/duotones per brand rule */
 .img-frame{ background: var(--kobus-stone); }
 .img-frame.overflow-hidden img{ transition: transform 700ms var(--ease-spring); }
