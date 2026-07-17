@@ -429,6 +429,7 @@ a.journal-row:focus-visible{ outline: 2px solid var(--kobus-ink); outline-offset
 
 /* Article pages */
 .article-body{ max-width: 36rem; margin: 0 auto; }
+.article-body p{ text-align: justify; }
 .article-body p + p{ margin-top: 1.25rem; }
 
 /* Page-load fade — a single orchestrated moment */
